@@ -1,0 +1,6 @@
+<img src="/images/datacenter.jpg" alt="Data Center" class="img-responsive center-block" /> <br />
+<p>Despite the name, we are much more than just a web hosting company. We are a web services company, providing clients with reliable and affordable hosting, domain names, SSL certificates and design solutions.</p>
+<p>Afford A Host was founded in 2004, with the belief that many companies over charge for their web services. We launched in early 2005, immediately meeting the aim of providing quality web services at down to earth prices. In January 2006 Afford A Host merged with Splash! Web Hosting and has continued to grow and evolve ever since.</p>
+<p>Based in London, UK we pride ourselves on serving clients from across the globe whilst maintaining a friendly personal service from David and his team.</p>
+<p>We can accept payment via PayPal or Bank Transfer, in many currencies including GBP(£), EUR(€) and USD($) amongst others - <a href="contact.php">contact us</a> for further details.</p>
+<br />

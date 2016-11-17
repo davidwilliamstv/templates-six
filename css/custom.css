@@ -6,3 +6,662 @@
     defined here.
 
 ***************************************************** */
+#top-nav {
+	padding-bottom: 10px;
+}
+.navbar-main {
+	background-color: #CC0000;
+}
+.navbar-default .navbar-toggle .icon-bar{background-color:#FFF}
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+	background-color: #CC0000;
+	border-color: #CC0000;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+	background-color: #CC0000;
+	border-color: #CC0000;
+}
+.navbar-main .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	color: #222222;
+	background-color: #eee;
+}
+.home-shortcuts li {
+	border-right: 1px solid #fff;
+}
+.home-shortcuts li:first-child {
+	border-left: 1px solid #fff;
+}
+section#footer p {
+	border-top: 0px;
+	line-height: 40px;
+	color: #fff;
+	background:#CC0000;
+}
+section#footer a {
+	color: #fff;
+}
+a,
+a:hover,
+a:focus {
+	color: #CC0000;
+}
+.btn-primary,
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus,
+.btn-primary[disabled].focus,
+fieldset[disabled] .btn-primary.focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+	background-color:#CC0000;
+	border-color:#CC0000;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+	background-color:#AE0101;
+	border-color:#AE0101;
+}
+.btn-info {
+	background-color:#f0ad4e;
+	border-color:#eea236;
+}
+.btn-info:hover,
+.btn-info:focus,
+.btn-info.focus,
+.btn-info:active,
+.btn-info.active,
+.open > .dropdown-toggle.btn-info {
+	background-color:#ec971f;
+	border-color:#ec971f;
+}
+#popup-backdrop {
+	background-color: #CC0000;
+}
+div.header-lined h1 {
+	color: #CC0000;
+}
+.dataTables_wrapper .dataTables_info {
+	background-color: #CC0000;
+}
+.status-expired {
+	background-color: #CC0000;
+}
+.status-cancelled {
+	background-color: #CC0000;
+}
+.status-terminated {
+	background-color: #CC0000;
+}
+.home-shortcuts {
+	background: #FE9900;
+}
+.home-shortcuts li {
+	border-right: 1px solid #fff;
+}
+.home-shortcuts li:first-child {
+	border-left: 1px solid #fff;
+}
+ @media (max-width: 767px) {
+.home-shortcuts li {
+	display: block;
+	float: none;
+	width: 100%;
+	border-right: 0;
+	border-bottom: 1px solid #fff;
+}
+.home-shortcuts li:first-child {
+	border-left: 0;
+}
+}
+.sprite {
+	background: url('/images/icon_spritemap.png');
+	background-repeat: no-repeat;
+}
+.icon-bandwidth {
+	background-position: -5px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-virus_scanner {
+	background-position: -63px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-web_disk {
+	background-position: -5px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-disk_usage {
+	background-position: -63px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-webalizer {
+	background-position: -121px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-apache_spam_assassin {
+	background-position: -121px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-mailing_lists {
+	background-position: -5px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-errors {
+	background-position: -63px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-php_my_admin {
+	background-position: -121px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-ssh_access {
+	background-position: -179px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-raw_access {
+	background-position: -179px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-mysql_database_wizard {
+	background-position: -179px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-user_filters {
+	background-position: -5px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-webalizer_ftp {
+	background-position: -63px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-mod_security {
+	background-position: -121px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-track_dns {
+	background-position: -179px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-address_importer {
+	background-position: -237px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-encryption {
+	background-position: -237px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-file_manager {
+	background-position: -237px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-mx_entry {
+	background-position: -237px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-images {
+	background-position: -5px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-cron_jobs {
+	background-position: -63px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-logaholic {
+	background-position: -121px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-leech_protection {
+	background-position: -179px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-authentication {
+	background-position: -237px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-ssl_tls {
+	background-position: -295px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-indexes {
+	background-position: -295px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-visitors {
+	background-position: -295px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-track_delivery {
+	background-position: -295px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-simple_zone_editor {
+	background-position: -295px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-security_policy {
+	background-position: -5px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-advanced_zone_editor {
+	background-position: -63px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-default_address {
+	background-position: -121px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-site_software {
+	background-position: -179px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-hotlink_protection {
+	background-position: -237px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-ftp_connections {
+	background-position: -295px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-api_shell {
+	background-position: -353px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-php_pg_admin {
+	background-position: -353px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-archive {
+	background-position: -353px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-remote_mysql {
+	background-position: -353px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-apache_handlers {
+	background-position: -353px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-addon_domains {
+	background-position: -353px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-error_pages {
+	background-position: -5px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-ftp_accounts {
+	background-position: -63px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-directory_privacy {
+	background-position: -121px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-accounts {
+	background-position: -179px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-perl_modules {
+	background-position: -237px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-boxtrapper {
+	background-position: -295px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-redirects {
+	background-position: -353px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-forwarders {
+	background-position: -411px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-support {
+	background-position: -411px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-analog_stats {
+	background-position: -411px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-backup {
+	background-position: -411px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-php_pear_packages {
+	background-position: -411px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-mime_types {
+	background-position: -411px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-php {
+	background-position: -411px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-web_host_manager {
+	background-position: -5px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-postgresql_databases {
+	background-position: -63px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-awstats {
+	background-position: -121px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-mysql_databases {
+	background-position: -179px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-ruby_on_rails {
+	background-position: -237px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-ruby_gems {
+	background-position: -295px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-aliases {
+	background-position: -353px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-optimize_website {
+	background-position: -411px -411px;
+	width: 48px;
+	height: 48px;
+}
+.icon-postgresql_database_wizard {
+	background-position: -469px -5px;
+	width: 48px;
+	height: 48px;
+}
+.icon-ip_blocker {
+	background-position: -469px -63px;
+	width: 48px;
+	height: 48px;
+}
+.icon-global_filters {
+	background-position: -469px -121px;
+	width: 48px;
+	height: 48px;
+}
+.icon-metrics_editor {
+	background-position: -469px -179px;
+	width: 48px;
+	height: 48px;
+}
+.icon-anonymous_ftp {
+	background-position: -469px -237px;
+	width: 48px;
+	height: 48px;
+}
+.icon-subdomains {
+	background-position: -469px -295px;
+	width: 48px;
+	height: 48px;
+}
+.icon-cpu_and_concurrent_connection_usage {
+	background-position: -5px -469px;
+	width: 32px;
+	height: 32px;
+}
+.icon-backup_wizard {
+	background-position: -469px -353px;
+	width: 48px;
+	height: 48px;
+}
+.icon-autoresponders {
+	background-position: -469px -411px;
+	width: 48px;
+	height: 48px;
+}
+.planbox {
+	float:left;
+	width:100%;
+	margin:0 0 0 0;
+}
+.plan1 {
+	float:left;
+	width:250px;
+	background-color:#fff;
+	padding:16px 0 0 0;
+	box-shadow:0px 2px 2px #c9cac5;
+	margin:10px 20px 0 0;
+}
+.plan1 h4 {
+	margin:0 0 18px;
+	padding:0px;
+	font-size:20px;
+	color:#28292d;
+	line-height:20px;
+	text-transform:uppercase;
+	text-align:center;
+}
+.plan1 ul {
+	list-style:none;
+	margin:0px;
+	padding:0px;
+}
+.plan1 ul li {
+	padding-top:10px;
+	padding-bottom:10px;
+	color:#28292d;
+	border-bottom:1px solid #fff;
+	text-align:center;
+}
+.plan1 ul li:last-child {
+	border-bottom:none;
+}
+.bg1 {
+	background-color:#f5f5f5;
+}
+.bg2 {
+	background-color:#ececec;
+}
+.planrate_box {
+	float:left;
+	width:250px;
+	font-size:22px;
+	text-align:center;
+	color:#777;
+	border:1px solid #fff;
+	background-color:#28292d;
+	padding:19px 0;
+}
+.planrate_box span {
+	color:#ef9211;
+	font-size:28px;
+}
+.buybtn {
+	width:114px;
+	height:31px;
+	margin:18px auto 0;
+}
+.buybtn a {
+	display:block;
+	width:114px;
+	height:31px;
+	line-height:31px;
+	font-size:18px;
+	text-align:center;
+	text-decoration:none;
+	color:#202020;
+	text-transform:uppercase;
+	text-shadow:0px 1px 1px #f4c849;
+	background:url(../img/buybtn.png) no-repeat left top;
+}
+.buybtn a:hover {
+	background:url(../img/buybtn.png) no-repeat left bottom;
+}
+.linux_icon {
+	float:left;
+	width:30px;
+	height:35px;
+	background:url(../img/linux_icon.png) no-repeat left top;
+	margin:9px 7px 0 0;
+}
+.domains_icon {
+	float:left;
+	width:39px;
+	height:35px;
+	background:url(../img/domains_icon.png) no-repeat left top;
+	margin:6px 5px 0 0;
+}
+.ssl_icon {
+	float:left;
+	width:30px;
+	height:35px;
+	background:url(../img/ssl_icon.png) no-repeat left top;
+	margin:7px 7px 0 0;
+}
+.orange {
+	color:#ef9211;
+}
+.orange2 {
+	font-weight:bold;
+	color:#ef9211;
+}
+.table-framed {
+	border: 1px solid #DDD;
+	border-collapse: separate;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+/**
+ * -------------------------
+ * Currency Chooser
+ * -------------------------
+ */
+
+.currency-popover {
+	max-width: 450px;
+	background-color: rgba(20, 20, 20, 0.98);
+	font-size:0.8em;
+}
+.currency-popover.popover.bottom > .arrow:after {
+	border-bottom-color: rgba(20, 20, 20, 0.97);
+}
+.currency-popover .popover-content ul {
+	margin: 0 0 0 0;
+	padding: 0;
+	list-style-type: none;
+	overflow: hidden;
+}
+.currency-popover .popover-content li {
+	line-height: 2em;
+}
+.currency-popover .popover-content li a {
+	color: #f2f2f2;
+}
+
+.alert-info {
+	color: #555555;
+	background-color: #FFDEAD;
+	border-color: #FE9900;
+}
+.alert-danger {
+	border-color: #CC0000;
+}
+
+#top-nav a.quick-nav-alert {
+	margin: 0 0 0 15px;
+	padding: 0;
+	color: #F00;
+	font-weight: bold;
+}
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

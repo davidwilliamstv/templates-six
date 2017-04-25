@@ -631,7 +631,7 @@ div.tweet span {
 
 /* ===== Domain Checker ===== */
 
-div.domainresults div:not(.btn-group) {
+div.domainresults div {
     margin: 0;
     padding: 10px 25px;
     background-color: #ddd;
@@ -640,7 +640,7 @@ div.domainresults div:not(.btn-group) {
     border-radius: 6px 6px 0 0;
 }
 
-div.domainresults div:not(.btn-group) span {
+div.domainresults div span {
     padding-left: 20px;
     font-size: 14px;
     color: #888;
@@ -713,8 +713,7 @@ div.domainresults table tr td {
 .domain-checker-available {
     color: #5cb85c;
 }
-.domain-checker-unavailable,
-.domain-checker-invalid {
+.domain-checker-unavailable {
     color: #d9534f;
 }
 
@@ -844,7 +843,6 @@ div.product-details-tab-container {
 .dataTables_wrapper table.table-list {
     margin-top: 0 !important;
     margin-bottom: 6px !important;
-    width: 100% !important;
 }
 
 .dataTables_wrapper .dataTables_filter {
@@ -985,8 +983,7 @@ table.dtr-inline.collapsed .responsive-edit-button {
     background-color: #A68500;
 }
 .status-active,
-.status-open,
-.status.completed {
+.status-open {
     background-color: #3fad46;
 }
 .status-suspended {
@@ -999,8 +996,7 @@ table.dtr-inline.collapsed .responsive-edit-button {
 .status-answered {
     background-color: #000000;
 }
-.status-expired,
-.status-transferred.away{
+.status-expired {
     background-color: #004258;
 }
 .status-cancelled {
@@ -1815,7 +1811,7 @@ tr.masspay-total td {
     width: 304px;
     height: 78px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: -66px;
 }
 
 #default-captcha-domainchecker {
@@ -1835,6 +1831,7 @@ tr.masspay-total td {
 @media (max-width: 991px) {
     #google-recaptcha-domainchecker {
         padding-left: 2.5%;
+        margin-bottom: -25px;
     }
 
     #default-captcha-domainchecker {
@@ -1844,6 +1841,7 @@ tr.masspay-total td {
 
 @media (max-width: 736px) {
     #google-recaptcha-domainchecker {
+        margin-bottom: -35px;
         transform: scale(0.935);
         transform-origin: 0 0;
         -webkit-transform: scale(0.935);
@@ -1853,6 +1851,7 @@ tr.masspay-total td {
 
 @media (max-width: 384px) {
     #google-recaptcha-domainchecker {
+        margin-bottom: -30px;
         transform: scale(0.96);
         transform-origin: 0 0;
     }
@@ -1860,6 +1859,7 @@ tr.masspay-total td {
 
 @media (max-width: 360px) {
     #google-recaptcha-domainchecker {
+        margin-bottom: -35px;
         transform: scale(0.89);
         transform-origin: 0 0;
     }
@@ -1868,96 +1868,10 @@ tr.masspay-total td {
 @media (max-width: 320px) {
     #google-recaptcha-domainchecker {
         padding-left: 13.5%;
+        margin-bottom: -45px;
         transform: scale(0.83);
         transform-origin: 0 0;
         -webkit-transform: scale(0.785);
         -webkit-transform-origin: 0 0;
     }
-}
-
-/**
- * -------------------------
- * Email Verification
- * -------------------------
- */
-
-.email-verification {
-    margin: 0;
-    padding: 10px;
-    font-size: 0.9em;
-    line-height: 30px;
-}
-
-/**
- * -------------------------
- * Markdown Editor
- * -------------------------
- */
-
-.markdown-editor-status {
-    padding: 2px 10px;
-    font-size: 9pt;
-    color: #959694;
-    text-align: right;
-
-}
-
-.small-font {
-    font-size: 0.9em;
-}
-
-/**
- * -------------------------
- * Markdown Content Formatting
- * -------------------------
- */
-
-.markdown-content h1 {
-    font-size: 1.6em;
-    color: #333;
-}
-.markdown-content h2 {
-    font-size: 1.4em;
-    color: #333;
-}
-.markdown-content h3 {
-    font-size: 1.2em;
-    color: #333;
-}
-.markdown-content h4 {
-    font-size: 1.1em;
-    color: #333;
-}
-
-.markdown-content pre {
-    padding: 15px;
-    background-color: #444;
-    color: #f8f8f8;
-    border: 0;
-}
-.markdown-content pre code {
-    white-space: pre;
-    word-break: normal;
-    word-wrap: normal;
-}
-
-.markdown-content blockquote {
-    font-size: 1em;
-}
-
-.markdown-content table {
-    margin: 10px 0;
-    background-color: #fff;
-    border: 1px solid #ddd;
-}
-.markdown-content table > thead > tr > th {
-    padding: 4px 10px;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    font-weight: bold;
-    text-align: center;
-}
-.markdown-content table > tbody > tr > td {
-    padding: 3px 8px;
-    border: 1px solid #ddd;
 }

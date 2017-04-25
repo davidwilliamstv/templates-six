@@ -12,23 +12,16 @@
     {include file="six/includes/alert.tpl" type="info" msg="{$LANG.passwordtips}"}
 {/if}
 
+{literal}
 <script type="text/javascript">
 jQuery("#inputNewPassword1").keyup(function() {
-{if isset($pwStrengthErrorThreshold)}
-    var pwStrengthErrorThreshold = {$pwStrengthErrorThreshold};
-{else}
-    var pwStrengthErrorThreshold = 50;
-{/if}
-{if isset($pwStrengthWarningThreshold)}
-    var pwStrengthWarningThreshold = {$pwStrengthWarningThreshold};
-{else}
-    var pwStrengthWarningThreshold = 75;
-{/if}
-
     var $newPassword1 = jQuery("#newPassword1");
     var pw = jQuery("#inputNewPassword1").val();
     var pwlength=(pw.length);
     if(pwlength>5)pwlength=5;
+    else if(pwlength>4)pwlength=4.5;
+    else if(pwlength>2)pwlength=3.5;
+    else if(pwlength>0)pwlength=2.5;
     var numnumeric=pw.replace(/[0-9]/g,"");
     var numeric=(pw.length-numnumeric.length);
     if(numeric>3)numeric=3;
@@ -46,11 +39,11 @@ jQuery("#inputNewPassword1").keyup(function() {
     jQuery("#inputNewPassword1").next('.form-control-feedback').removeClass('glyphicon-remove glyphicon-warning-sign glyphicon-ok');
     jQuery("#passwordStrengthBar .progress-bar").removeClass("progress-bar-danger progress-bar-warning progress-bar-success").css("width", pwstrength + "%").attr('aria-valuenow', pwstrength);
     jQuery("#passwordStrengthBar .progress-bar .sr-only").html('New Password Rating: ' + pwstrength + '%');
-    if (pwstrength < pwStrengthErrorThreshold) {
+    if (pwstrength < 30) {
         $newPassword1.addClass('has-error');
         jQuery("#inputNewPassword1").next('.form-control-feedback').addClass('glyphicon-remove');
         jQuery("#passwordStrengthBar .progress-bar").addClass("progress-bar-danger");
-    } else if (pwstrength < pwStrengthWarningThreshold) {
+    } else if (pwstrength < 75) {
         $newPassword1.addClass('has-warning');
         jQuery("#inputNewPassword1").next('.form-control-feedback').addClass('glyphicon-warning-sign');
         jQuery("#passwordStrengthBar .progress-bar").addClass("progress-bar-warning");
@@ -71,14 +64,14 @@ function validatePassword2() {
         $newPassword2.removeClass('has-success')
             .addClass('has-error');
         jQuery("#inputNewPassword2").next('.form-control-feedback').removeClass('glyphicon-ok').addClass('glyphicon-remove');
-        jQuery("#inputNewPassword2Msg").html('<p class="help-block">{$LANG.pwdoesnotmatch|escape}</p>');
-        {if !isset($noDisable)}jQuery('input[type="submit"]').attr('disabled', 'disabled');{/if}
+        jQuery("#inputNewPassword2Msg").html('<p class="help-block">The passwords entered do not match</p>');
+        {/literal}{if !isset($noDisable)}jQuery('input[type="submit"]').attr('disabled', 'disabled');{/if}{literal}
     } else {
         if (password2) {
             $newPassword2.removeClass('has-error')
                 .addClass('has-success');
             jQuery("#inputNewPassword2").next('.form-control-feedback').removeClass('glyphicon-remove').addClass('glyphicon-ok');
-            {if !isset($noDisable)}jQuery('.main-content input[type="submit"]').removeAttr('disabled');{/if}
+            {/literal}{if !isset($noDisable)}jQuery('.main-content input[type="submit"]').removeAttr('disabled');{/if}{literal}
         } else {
             $newPassword2.removeClass('has-error has-success');
             jQuery("#inputNewPassword2").next('.form-control-feedback').removeClass('glyphicon-remove glyphicon-ok');
@@ -88,10 +81,11 @@ function validatePassword2() {
 }
 
 jQuery(document).ready(function(){
-    {if !isset($noDisable)}jQuery('.using-password-strength input[type="submit"]').attr('disabled', 'disabled');{/if}
+    {/literal}{if !isset($noDisable)}jQuery('.using-password-strength input[type="submit"]').attr('disabled', 'disabled');{/if}{literal}
     jQuery("#inputNewPassword2").keyup(function() {
         validatePassword2();
     });
 });
 
 </script>
+{/literal}

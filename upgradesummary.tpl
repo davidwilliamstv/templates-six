@@ -86,11 +86,11 @@
                 {if $promocode}
                     <span class="input-group-btn">
                         <input type="submit" name="removepromo" value="{$LANG.orderdontusepromo}"
-                               class="btn btn-danger" />
+                               class="btn btn-danger btn-block" />
                     </span>
                 {else}
                     <span class="input-group-btn">
-                        <input type="submit" value="{$LANG.orderpromovalidatebutton}" class="btn btn-success" />
+                        <input type="submit" value="{$LANG.orderpromovalidatebutton}" class="btn btn-success btn-block" />
                     </span>
                 {/if}
             </div>
@@ -115,9 +115,7 @@
             {include file="$template/includes/subheader.tpl" title=$LANG.orderpaymentmethod}
             <div class="form-group">
                 <select name="paymentmethod" id="inputPaymentMethod" class="form-control">
-                    {if $allowgatewayselection}
-                        <option value="none">{$LANG.paymentmethoddefault}</option>
-                    {/if}
+                    <option value="none">{$LANG.paymentmethoddefault}</option>
                     {foreach key=num item=gateway from=$gateways}
                         <option value="{$gateway.sysname}"{if $gateway.sysname eq $selectedgateway} selected="selected"{/if}>{$gateway.name}</option>
                     {/foreach}

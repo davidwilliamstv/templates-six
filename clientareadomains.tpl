@@ -7,27 +7,26 @@
         <script type="text/javascript">
             jQuery(document).ready( function ()
             {
-                var table = jQuery('#tableDomainsList').removeClass('hidden').DataTable();
+                var table = $('#tableDomainsList').DataTable();
                 {if $orderby == 'domain'}
                     table.order(1, '{$sort}');
                 {elseif $orderby == 'regdate' || $orderby == 'registrationdate'}
                     table.order(2, '{$sort}');
                 {elseif $orderby == 'nextduedate'}
                     table.order(3, '{$sort}');
-                {elseif $orderby == 'autorenew'}
+                {elseif $orderby == 'price' || $orderby == 'recurringamount'}
                     table.order(4, '{$sort}');
                 {elseif $orderby == 'status'}
                     table.order(5, '{$sort}');
                 {/if}
                 table.draw();
-                jQuery('#tableLoading').addClass('hidden');
             });
         </script>
         <form id="domainForm" method="post" action="clientarea.php?action=bulkdomain">
             <input id="bulkaction" name="update" type="hidden" />
 
             <div class="table-container clearfix">
-                <table id="tableDomainsList" class="table table-list hidden">
+                <table id="tableDomainsList" class="table table-list">
                     <thead>
                         <tr>
                             <th width="20"></th>
@@ -48,24 +47,18 @@
                             <td><a href="http://{$domain.domain}" target="_blank">{$domain.domain}</a></td>
                             <td><span class="hidden">{$domain.normalisedRegistrationDate}</span>{$domain.registrationdate}</td>
                             <td><span class="hidden">{$domain.normalisedNextDueDate}</span>{$domain.nextduedate}</td>
-                            <td>
-                                {if $domain.autorenew}
-                                    <i class="fa fa-fw fa-check text-success"></i> {$LANG.domainsautorenewenabled}
-                                {else}
-                                    <i class="fa fa-fw fa-times text-danger"></i> {$LANG.domainsautorenewdisabled}
-                                {/if}
-                            </td>
+                            <td>{$domain.amount}</td>
                             <td>
                                 <span class="label status status-{$domain.statusClass}">{$domain.statustext}</span>
                                 <span class="hidden">
-                                    {if $domain.next30}<span>{$LANG.domainsExpiringInTheNext30Days}</span><br />{/if}
-                                    {if $domain.next90}<span>{$LANG.domainsExpiringInTheNext90Days}</span><br />{/if}
-                                    {if $domain.next180}<span>{$LANG.domainsExpiringInTheNext180Days}</span><br />{/if}
-                                    {if $domain.after180}<span>{$LANG.domainsExpiringInMoreThan180Days}</span>{/if}
+                                    {if $domain.next30}{$LANG.domainsExpiringInTheNext30Days}<br />{/if}
+                                    {if $domain.next90}{$LANG.domainsExpiringInTheNext90Days}<br />{/if}
+                                    {if $domain.next180}{$LANG.domainsExpiringInTheNext180Days}<br />{/if}
+                                    {if $domain.after180}{$LANG.domainsExpiringInMoreThan180Days}{/if}
                                 </span>
                             </td>
                             <td>
-                                <div class="btn-group btn-group-sm" style="width:60px;">
+                                <div class="btn-group btn-group-sm">
                                     <a href="clientarea.php?action=domaindetails&id={$domain.id}" class="btn btn-default"><i class="fa fa-wrench"></i></a>
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                         <span class="caret"></span>
@@ -86,9 +79,6 @@
                     {/foreach}
                     </tbody>
                 </table>
-                <div class="text-center" id="tableLoading">
-                    <p><i class="fa fa-spinner fa-spin"></i> {$LANG.loading}</p>
-                </div>
             </div>
         </form>
 
@@ -106,16 +96,6 @@
     </div>
     <div class="tab-pane fade in" id="tabRenew">
         {include file="$template/includes/tablelist.tpl" tableName="RenewalsList" noSortColumns="3, 4, 5" startOrderCol="0" filterColumn="1" dontControlActiveClass=true}
-        <script type="text/javascript">
-            var observer = new MutationObserver(function(mutations) {
-                jQuery('#Secondary_Sidebar-My_Domains_Actions-Renew_Domain').toggleClass('active')
-            });
-            var target = document.querySelector('#tabRenew');
-            observer.observe(target, {
-                attributes: true
-            });
-
-        </script>
         <div class="table-container clearfix">
             <table id="tableRenewalsList" class="table table-list">
                 <thead>
@@ -139,10 +119,10 @@
                             <td id="status{$renewal.id}">
                                 <span class="label status status-{$renewal.statusClass}">{$renewal.status}</span>
                                 <span class="hidden">
-                                    {if $renewal.next30}<span>{$LANG.domainsExpiringInTheNext30Days}</span><br />{/if}
-                                    {if $renewal.next90}<span>{$LANG.domainsExpiringInTheNext90Days}</span><br />{/if}
-                                    {if $renewal.next180}<span>{$LANG.domainsExpiringInTheNext180Days}</span><br />{/if}
-                                    {if $renewal.after180}<span>{$LANG.domainsExpiringInMoreThan180Days}</span>{/if}
+                                    {if $renewal.next30}{$LANG.domainsExpiringInTheNext30Days}<br />{/if}
+                                    {if $renewal.next90}{$LANG.domainsExpiringInTheNext90Days}<br />{/if}
+                                    {if $renewal.next180}{$LANG.domainsExpiringInTheNext180Days}<br />{/if}
+                                    {if $renewal.after180}{$LANG.domainsExpiringInMoreThan180Days}{/if}
                                 </span>
                             </td>
                             <td id="expiry{$renewal.id}"><span class="hidden">{$renewal.normalisedExpiryDate}</span>{$renewal.expiryDate}</td>

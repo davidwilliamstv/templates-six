@@ -64,20 +64,14 @@
 
         <br />
 
-        {if $systemStatus == 'Active'
-            and (
-                $managementoptions.nameservers or
-                $managementoptions.contacts or
-                $managementoptions.locking or
-                $renew)}
-                {* No reason to show this section if nothing can be done here! *}
+        {if $systemStatus == 'Active'}
 
             <h4>{$LANG.doToday}</h4>
 
             <ul>
                 {if $managementoptions.nameservers}
                     <li>
-                        <a class="tabControlLink" data-toggle="tab" href="#tabNameservers">
+                        <a class="tabControlLink" href="#tabNameservers">
                             {$LANG.changeDomainNS}
                         </a>
                     </li>
@@ -91,18 +85,16 @@
                 {/if}
                 {if $managementoptions.locking}
                     <li>
-                        <a class="tabControlLink" data-toggle="tab" href="#tabReglock">
+                        <a class="tabControlLink" href="#tabReglock">
                             {$LANG.changeRegLock}
                         </a>
                     </li>
                 {/if}
-                {if $renew}
-                    <li>
-                        <a href="cart.php?gid=renewals">
-                            {$LANG.renewYourDomain}
-                        </a>
-                    </li>
-                {/if}
+                <li>
+                    <a href="cart.php?gid=renewals">
+                        {$LANG.renewYourDomain}
+                    </a>
+                </li>
             </ul>
 
         {/if}
@@ -263,16 +255,11 @@
                 <div class="col-xs-9 col-md-10">
                     <strong>{$LANG.domainidprotection}</strong><br />
                     {$LANG.domainaddonsidprotectioninfo}<br />
-                    <form action="clientarea.php?action=domainaddons" method="post">
-                        <input type="hidden" name="id" value="{$domainid}"/>
-                        {if $addonstatus.idprotection}
-                            <input type="hidden" name="disable" value="idprotect"/>
-                            <input type="submit" value="{$LANG.disable}" class="btn btn-danger"/>
-                        {else}
-                            <input type="hidden" name="buy" value="idprotect"/>
-                            <input type="submit" value="{$LANG.domainaddonsbuynow} {$addonspricing.idprotection}" class="btn btn-success"/>
-                        {/if}
-                    </form>
+                    {if $addonstatus.idprotection}
+                        <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=idprotect&token={$token}">{$LANG.disable}</a>
+                    {else}
+                        <a href="clientarea.php?action=domainaddons&id={$domainid}&buy=idprotect&token={$token}">{$LANG.domainaddonsbuynow} {$addonspricing.idprotection}</a>
+                    {/if}
                 </div>
             </div>
         {/if}
@@ -284,16 +271,11 @@
                 <div class="col-xs-9 col-md-10">
                     <strong>{$LANG.domainaddonsdnsmanagement}</strong><br />
                     {$LANG.domainaddonsdnsmanagementinfo}<br />
-                    <form action="clientarea.php?action=domainaddons" method="post">
-                        <input type="hidden" name="id" value="{$domainid}"/>
-                        {if $addonstatus.dnsmanagement}
-                            <input type="hidden" name="disable" value="dnsmanagement"/>
-                            <a class="btn btn-success" href="clientarea.php?action=domaindns&domainid={$domainid}">{$LANG.manage}</a> <input type="submit" value="{$LANG.disable}" class="btn btn-danger"/>
-                        {else}
-                            <input type="hidden" name="buy" value="dnsmanagement"/>
-                            <input type="submit" value="{$LANG.domainaddonsbuynow} {$addonspricing.dnsmanagement}" class="btn btn-success"/>
-                        {/if}
-                    </form>
+                    {if $addonstatus.dnsmanagement}
+                        <a href="clientarea.php?action=domaindns&domainid={$domainid}">{$LANG.manage}</a> | <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=dnsmanagement&token={$token}">{$LANG.disable}</a>
+                    {else}
+                        <a href="clientarea.php?action=domainaddons&id={$domainid}&buy=dnsmanagement&token={$token}">{$LANG.domainaddonsbuynow} {$addonspricing.dnsmanagement}</a>
+                    {/if}
                 </div>
             </div>
         {/if}
@@ -305,16 +287,11 @@
                 <div class="col-xs-9 col-md-10">
                     <strong>{$LANG.domainemailforwarding}</strong><br />
                     {$LANG.domainaddonsemailforwardinginfo}<br />
-                    <form action="clientarea.php?action=domainaddons" method="post">
-                        <input type="hidden" name="id" value="{$domainid}"/>
-                        {if $addonstatus.emailforwarding}
-                            <input type="hidden" name="disable" value="emailfwd"/>
-                            <a class="btn btn-success" href="clientarea.php?action=domainemailforwarding&domainid={$domainid}">{$LANG.manage}</a> <input type="submit" value="{$LANG.disable}" class="btn btn-danger"/>
-                        {else}
-                            <input type="hidden" name="buy" value="emailfwd"/>
-                            <input type="submit" value="{$LANG.domainaddonsbuynow} {$addonspricing.emailforwarding}" class="btn btn-success"/>
-                        {/if}
-                    </form>
+                    {if $addonstatus.emailforwarding}
+                        <a href="clientarea.php?action=domainemailforwarding&domainid={$domainid}">{$LANG.manage}</a> | <a href="clientarea.php?action=domainaddons&id={$domainid}&disable=emailfwd&token={$token}">{$LANG.disable}</a>
+                    {else}
+                        <a href="clientarea.php?action=domainaddons&id={$domainid}&buy=emailfwd&token={$token}">{$LANG.domainaddonsbuynow} {$addonspricing.emailforwarding}</a>
+                    {/if}
                 </div>
             </div>
         {/if}

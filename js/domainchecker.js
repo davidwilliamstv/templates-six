@@ -109,30 +109,18 @@ jQuery(document).ready(function() {
     });
 });
 
-function addToCart(clickedBtn, performAvailabilityCheck, orderType, years) {
+function addToCart(clickedBtn, performAvailabilityCheck) {
 
     var selectedDomain = jQuery(clickedBtn).closest('tr')
         .find('td:first strong')
         .html();
-    var appendYears = '';
-    if (typeof years != "undefined") {
-        clickedBtn = jQuery(clickedBtn).closest('div')
-            .find('button:first');
-        appendYears = '&reg_period=' + years;
-    }
-
-    var cartDropDown = jQuery(clickedBtn).closest('div')
-        .find('button.additional-options');
-    if (typeof cartDropDown != "undefined") {
-        jQuery(cartDropDown).attr('disabled', 'disabled');
-    }
 
     jQuery(clickedBtn).attr('disabled', 'disabled')
         .html('<span class="glyphicon glyphicon-shopping-cart"></span> ' + langAdding + '...');
 
     jQuery.post(
         "domainchecker.php",
-        "addtocart=1&check=" + performAvailabilityCheck + "&token=" + csrfToken + "&domain=" + selectedDomain + "&orderType=" + orderType + appendYears,
+        "addtocart=1&check=" + performAvailabilityCheck + "&token=" + csrfToken + "&domain=" + selectedDomain,
         function(data) {
             if (data == 1) {
                 jQuery("#cartItemCount").html(((jQuery("#cartItemCount").html() * 1) + 1));

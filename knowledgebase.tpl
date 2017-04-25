@@ -1,4 +1,4 @@
-<form role="form" method="post" action="{$WEB_ROOT}/knowledgebase.php?action=search">
+<form role="form" method="post" action="knowledgebase.php?action=search">
     <div class="input-group">
         <input type="text" name="search" class="form-control" placeholder="{$LANG.kbsearchexplain}" />
         <span class="input-group-btn">
@@ -11,16 +11,13 @@
 
 {if $kbcats}
     <div class="row kbcategories">
-        {foreach from=$kbcats name=kbcats item=kbcat}
+        {foreach from=$kbcats item=kbcat}
             <div class="col-sm-4">
                 <a href="{if $seofriendlyurls}{$WEB_ROOT}/knowledgebase/{$kbcat.id}/{$kbcat.urlfriendlyname}{else}knowledgebase.php?action=displaycat&amp;catid={$kbcat.id}{/if}">
                     <span class="glyphicon glyphicon-folder-close"></span> {$kbcat.name} <span class="badge badge-info">{$kbcat.numarticles}</span>
                 </a>
                 <p>{$kbcat.description}</p>
             </div>
-            {if $smarty.foreach.kbcats.iteration mod 3 == 0}
-                <div class="clearfix"></div>
-            {/if}
         {/foreach}
     </div>
 {else}

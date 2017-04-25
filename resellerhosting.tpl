@@ -57,7 +57,7 @@
       </li>
       <li>
         <div class="plan1">
-          <h4>Pro+ <span class="orange">Reseller</span></h4>
+          <h4>Master <span class="orange">Reseller</span></h4>
           <ul>
             <li class="bg1"><span class="orange2">3GB</span> Disk Storage Space</li>
             <li class="bg2"><span class="orange2">30GB</span> Monthly Bandwidth</li>

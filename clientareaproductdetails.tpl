@@ -1,13 +1,13 @@
 {if $modulecustombuttonresult}
     {if $modulecustombuttonresult == "success"}
-        {include file="$template/includes/alert.tpl" type="success" msg=$LANG.moduleactionsuccess textcenter=true idname="alertModuleCustomButtonSuccess"}
+        {include file="$template/includes/alert.tpl" type="success" msg=$moduleactionsuccess textcenter=true}
     {else}
-        {include file="$template/includes/alert.tpl" type="error" msg=$LANG.moduleactionfailed|cat:' ':$modulecustombuttonresult textcenter=true idname="alertModuleCustomButtonFailed"}
+        {include file="$template/includes/alert.tpl" type="error" msg=$LANG.moduleactionfailed|cat:' ':$modulecustombuttonresult textcenter=true}
     {/if}
 {/if}
 
 {if $pendingcancellation}
-    {include file="$template/includes/alert.tpl" type="error" msg=$LANG.cancellationrequestedexplanation textcenter=true idname="alertPendingCancellation"}
+    {include file="$template/includes/alert.tpl" type="error" msg=$LANG.cancellationrequestedexplanation textcenter=true}
 {/if}
 
 <div class="tab-content margin-bottom">
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-6">
 
-                        <div class="product-status product-status-{$rawstatus|strtolower}">
+                        <div class="product-status product-status-{$status|strtolower}">
                             <div class="product-icon text-center">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
@@ -39,15 +39,15 @@
                         {if $showcancelbutton || $packagesupgrade}
                             <div class="row">
                                 {if $packagesupgrade}
-                                    <div class="col-xs-{if $showcancelbutton}6{else}12{/if}">
+                                    <div class="col-xs-6">
                                         <a href="upgrade.php?type=package&amp;id={$id}" class="btn btn-block btn-success">{$LANG.upgrade}</a>
                                     </div>
+                                    <div class="col-xs-6">
+                                {else}
+                                    <div class="col-xs-12">
                                 {/if}
-                                {if $showcancelbutton}
-                                    <div class="col-xs-{if $packagesupgrade}6{else}12{/if}">
-                                        <a href="clientarea.php?action=cancel&amp;id={$id}" class="btn btn-block btn-danger {if $pendingcancellation}disabled{/if}">{if $pendingcancellation}{$LANG.cancellationrequested}{else}{$LANG.clientareacancelrequestbutton}{/if}</a>
-                                    </div>
-                                {/if}
+                                    <a href="clientarea.php?action=cancel&amp;id={$id}" class="btn btn-block btn-danger {if $pendingcancellation}disabled{/if}">{if $pendingcancellation}{$LANG.cancellationrequested}{else}{$LANG.cancel}{/if}</a>
+                                </div>
                             </div>
                         {/if}
 
@@ -350,7 +350,7 @@
                         {$LANG.clientareahostingnextduedate}: {$addon.nextduedate}
                     </p>
                     <p>
-                        <span class="label status-{$addon.rawstatus|strtolower}">{$addon.status}</span>
+                        <span class="label status-{$addon.status|strtolower}">{$addon.status}</span>
                     </p>
                 </div>
             {/foreach}
@@ -363,7 +363,7 @@
 
         {if $modulechangepwresult}
             {if $modulechangepwresult == "success"}
-                {include file="$template/includes/alert.tpl" type="success" msg=$modulechangepasswordmessage textcenter=true}
+                {include file="$template/includes/alert.tpl" type="success" msg=$serverchangepasswordsuccessful textcenter=true}
             {elseif $modulechangepwresult == "error"}
                 {include file="$template/includes/alert.tpl" type="error" msg=$modulechangepasswordmessage|strip_tags textcenter=true}
             {/if}
@@ -376,7 +376,7 @@
             <div id="newPassword1" class="form-group has-feedback">
                 <label for="inputNewPassword1" class="col-sm-5 control-label">{$LANG.newpassword}</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="inputNewPassword1" name="newpw" autocomplete="off" />
+                    <input type="password" class="form-control" id="inputNewPassword1" name="newpw" />
                     <span class="form-control-feedback glyphicon"></span>
                     {include file="$template/includes/pwstrength.tpl"}
                 </div>
@@ -384,7 +384,7 @@
             <div id="newPassword2" class="form-group has-feedback">
                 <label for="inputNewPassword2" class="col-sm-5 control-label">{$LANG.confirmnewpassword}</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="inputNewPassword2" name="confirmpw" autocomplete="off" />
+                    <input type="password" class="form-control" id="inputNewPassword2" name="confirmpw" />
                     <span class="form-control-feedback glyphicon"></span>
                     <div id="inputNewPassword2Msg">
                     </div>

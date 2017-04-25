@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{$companyname} - {$pagetitle}</title>
 
-    <link href="{$WEB_ROOT}/templates/{$template}/css/all.min.css" rel="stylesheet">
-    <link href="{$WEB_ROOT}/templates/{$template}/css/invoice.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{$BASE_PATH_CSS}/bootstrap.min.css" rel="stylesheet">
+    <link href="{$BASE_PATH_CSS}/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Styling -->
+    <link href="templates/{$template}/css/overrides.css" rel="stylesheet">
+    <link href="templates/{$template}/css/styles.css" rel="stylesheet">
+    <link href="templates/{$template}/css/invoice.css" rel="stylesheet">
 
 </head>
 <body>
@@ -34,9 +40,7 @@
                 <div class="col-sm-5 text-center">
 
                     <div class="invoice-status">
-                        {if $status eq "Draft"}
-                            <span class="draft">{$LANG.invoicesdraft}</span>
-                        {elseif $status eq "Unpaid"}
+                        {if $status eq "Unpaid"}
                             <span class="unpaid">{$LANG.invoicesunpaid}</span>
                         {elseif $status eq "Paid"}
                             <span class="paid">{$LANG.invoicespaid}</span>
@@ -49,7 +53,7 @@
                         {/if}
                     </div>
 
-                    {if $status eq "Unpaid" || $status eq "Draft"}
+                    {if $status eq "Unpaid"}
                         <div class="small-text">
                             {$LANG.invoicesdatedue}: {$datedue}
                         </div>

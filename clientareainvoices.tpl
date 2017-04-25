@@ -2,9 +2,9 @@
 <script type="text/javascript">
     jQuery(document).ready( function ()
     {
-        var table = jQuery('#tableInvoicesList').removeClass('hidden').DataTable();
+        var table = $('#tableInvoicesList').DataTable();
         {if $orderby == 'default'}
-            table.order([4, 'desc'], [2, 'asc']);
+            table.order(2, 'desc');
         {elseif $orderby == 'invoicenum'}
             table.order(0, '{$sort}');
         {elseif $orderby == 'date'}
@@ -17,12 +17,11 @@
             table.order(4, '{$sort}');
         {/if}
         table.draw();
-        jQuery('#tableLoading').addClass('hidden');
     });
 </script>
 
 <div class="table-container clearfix">
-    <table id="tableInvoicesList" class="table table-list hidden">
+    <table id="tableInvoicesList" class="table table-list">
         <thead>
             <tr>
                 <th>{$LANG.invoicestitle}</th>
@@ -39,7 +38,7 @@
                     <td>{$invoice.invoicenum}</td>
                     <td><span class="hidden">{$invoice.normalisedDateCreated}</span>{$invoice.datecreated}</td>
                     <td><span class="hidden">{$invoice.normalisedDateDue}</span>{$invoice.datedue}</td>
-                    <td data-order="{$invoice.totalnum}">{$invoice.total}</td>
+                    <td>{$invoice.total}</td>
                     <td><span class="label status status-{$invoice.statusClass}">{$invoice.status}</span></td>
                     <td class="responsive-edit-button" style="display: none;">
                         <a href="viewinvoice.php?id={$invoice.id}" class="btn btn-block btn-info">
@@ -50,7 +49,4 @@
             {/foreach}
         </tbody>
     </table>
-    <div class="text-center" id="tableLoading">
-        <p><i class="fa fa-spinner fa-spin"></i> {$LANG.loading}</p>
-    </div>
 </div>
